@@ -1,0 +1,15 @@
+{
+  "name": "ggcc-cartagreement",
+  "version": "1.0.0",
+  "description": "Cart Agreement Module",
+  "main": "main.js",
+  "scripts": {
+    "start":"electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Reynolds",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^17.1.0"
+  }
+}
