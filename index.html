@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://guildford-golf-and-cc.book.teeitup.com/ https://api.openweathermap.org/ https://uploads.sitepoint.com; script-src 'self' https://api.openweathermap.org/ https://rawgit.com">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self' https://guildford-golf-and-cc.book.teeitup.com/ https://api.openweathermap.org/ https://uploads.sitepoint.com; script-src 'self' https://api.openweathermap.org/ https://rawgit.com">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://guildford-golf-and-cc.book.teeitup.com/ https://api.openweathermap.org/ https://uploads.sitepoint.com https://openweathermap.org/; script-src 'self' https://api.openweathermap.org/ https://rawgit.com https://openweathermap.org/">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self' https://guildford-golf-and-cc.book.teeitup.com/ https://api.openweathermap.org/ https://uploads.sitepoint.com https://openweathermap.org/; script-src 'self' https://api.openweathermap.org/ https://rawgit.com https://openweathermap.org/">
     <link rel="stylesheet" href="index.css">
 
     <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
@@ -21,7 +21,7 @@
           <button name="tab3" href="#" class="menuOption">FORECAST</button>
           <!--<button name="tab3" href="#" class="menuOption">MEMBERSHIP</button>-->
           <!--<button name="tab4" href="#" class="menuOption">NEW MEMBER</button>-->
-          <button name="tab5" href="#" class="menuOption">COURSE GUIDE</button>
+          <button name="tab5" href="#" class="menuOption">COURSE MAP</button>
           <!--<button name="help" href="#" class="menuOption requestHelp">REQUEST HELP</button>-->
           <!--<button name="tab5" href="#" class="menuOption">COURSE GUIDE</button>-->
           <button loginType="Quit" id="quitButton" name="quit" href="#" class="menuOption lastOption">QUIT</button>
@@ -30,9 +30,6 @@
 
       <div id="rightPanel">
         <div id="tab1">
-          <div class="weatherOutput">
-            <p></p>
-          </div>
           <form class="tabDefault">
             <label for="MemberCard" id="MemberLabel">Please Scan Your QR Code</label>
             <!--<div id="videoContainer">
@@ -44,7 +41,6 @@
             <div id="videoContainer">
           
               <canvas id="qr-canvas"></canvas>
-              <img id="videoOverlay" src="./Resources/Images/videoOverlay.png">
 
               <div id="qr-result" hidden="">
                   <b>Data:</b> <span id="outputData"></span>
@@ -64,11 +60,8 @@
         </div>
 
         <div id="tab3">
-          <form class="tabDefault">
-            <div class="weatherOutput">
-              <p></p>
-            </div>
-          </form>
+          <iframe loading="defer" id="weatherMap" src="https://openweathermap.org/weathermap?basemap=map&cities=true&layer=temperature&lat=49.1459&lon=-122.8061&zoom=10" width="100%" height="100%" frameborder="0" scrolling="yes" align="middle"></iframe>
+          <div class="weatherOutput"><p></p></div>
         </div>
 
         <div id="tab4">
@@ -81,9 +74,6 @@
 
         <div id="tab5">
           <form class="tabDefault">
-              <div class="weatherOutput">
-                <p></p>
-              </div>
               <img id="courseMap" src="./Resources/Images/coursemap.webp">
               <img id="courseGuide" src="./Resources/Images/coursescorecard.webp">
           </form>

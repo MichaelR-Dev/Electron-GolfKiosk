@@ -4,9 +4,9 @@ const path = require('path')
 const createWindow = () => {
     const win = new BrowserWindow({
         fullscreen: true,
-        autoHideMenuBar: true,
+        /*autoHideMenuBar: true,*/
         backgroundColor: '#c4a45e',
-        frame: false,
+        frame: true,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }

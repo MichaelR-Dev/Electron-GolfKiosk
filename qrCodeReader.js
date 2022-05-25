@@ -11,8 +11,8 @@ let newTab = window;
 if(navigator.mediaDevices.getUserMedia){
   navigator.mediaDevices
   .getUserMedia({ video: {                 
-    width: { ideal: 720, max: 720 },
-    height: { ideal: 405, max: 405 },
+    width: { ideal: 800, max: 800 },
+    height: { ideal: 450, max: 450 },
     facingMode: "environment" } })
   .then(function(stream) {
     scanning = true;
@@ -41,8 +41,8 @@ qrcode.callback = (res) => {
 function newScan(){
   navigator.mediaDevices
   .getUserMedia({ video: {                 
-    width: { ideal: 720, max: 720 },
-    height: { ideal: 405, max: 405 },
+    width: { ideal: 800, max: 800 },
+    height: { ideal: 450, max: 450 },
     facingMode: "environment" } })
   .then(function(stream) {
     scanning = true;

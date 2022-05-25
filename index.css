@@ -22,6 +22,7 @@ html, body
 
 #videoContainer {
 	margin: 0px auto;
+    max-height: 450px;
     margin-top: 25px;
     margin-bottom: 25px;
 	/*width: fit-content;
@@ -30,19 +31,10 @@ html, body
     background-color: #000000;*/
 }
 
-#videoContainer>img{
-    display: flex;
-    padding: 0;
-    margin: 0;
-    width: 720px;
-    height: 405px;
-    bottom: 385px;
-    position: absolute;
-}
-
 #videoElement {
-	width: 720px;
-	height: 405px;
+    position: relative;
+	width: 100%;
+	height: 100%;
     padding: 0;
     margin: 0;
     border-style: solid;
@@ -111,8 +103,29 @@ html, body
 
 #tab3{
     display: none;
+    position: relative;
+    bottom: 6%;
+
     width: 100%;
     height: 100%;
+
+    overflow: visible;
+}
+
+#tab3 > .weatherOutput{
+    position: absolute;
+
+    top: 4vh;
+    left: 0;
+    z-index: 10;
+}
+
+#weatherMap{
+    padding: 0; margin: 0;
+
+    overflow: clip;
+    height: 106%;
+    width: 100%;
 }
 
 #tab4{
@@ -133,11 +146,12 @@ html, body
 
 #tab5>form>#courseMap{
    margin-top: 150%;
-   width: 100%;
+   width: 92%;
 }
 
 #tab5>form>#courseGuide{
-    width: 100%;
+    width: 92%;
+    margin-bottom: 4%;
 }
 
 .weatherOutput{
@@ -156,14 +170,14 @@ html, body
 
     justify-content: center;
 
-    font-size: 1.5em;
+    font-size: 1.3vw;
     font-weight:bolder;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-shadow: #000000 1px 1px 0, 2px 2px 2px rgba(206,89,55,0);
 }
 
 .weatherOutput>p{
-    color: rgb(226, 198, 136);
+    color: black;
 }
 
 .tabDefault{
@@ -174,7 +188,7 @@ html, body
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: white;
     box-shadow: inset 0px 0px 10px 10px rgba(102,92,83,0.88);
 }
 
@@ -187,10 +201,16 @@ html, body
 }
 
 #videoOverlay{
+    margin: 0; padding: 0;
+
     display: flex;
-    width: 174px;
-    height: 109px;
-    margin-bottom: 50px;
+    width: 99%;
+    height: 99%;
+    margin-left: 3px;
+    margin-bottom: 15px;
+
+    bottom: 100%;
+    position: relative;
 }
 
 #guestButton{
@@ -391,9 +411,11 @@ html, body
 }
   
 #qr-canvas {
-    margin: auto;
-    width: 720px;
-    height: 405px;
+    margin: 0; padding: 0;
+    width: 100%;
+    height: 100%;
+
+    border: solid 4px black;
 }
   
 #qr-result {
@@ -402,4 +424,5 @@ html, body
     padding: 20px;
     max-width: 700px;
     background-color: white;
+
 }
