@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
+    
 
     let activeTab = document.getElementById("activeTab");
     let menuOptions = document.getElementsByClassName("menuOption");

@@ -4,11 +4,12 @@ const path = require('path')
 const createWindow = () => {
     const win = new BrowserWindow({
         fullscreen: true,
-        /*autoHideMenuBar: true,*/
+        autoHideMenuBar: false,
         backgroundColor: '#c4a45e',
         frame: true,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: false
         }
     })
 
@@ -18,10 +19,14 @@ const createWindow = () => {
 app.whenReady().then(()=>{
     createWindow();
 
-    app.on('activate', () => {
+    /*app.on('activate', () => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
-    })
+    })*/
 
     
 
+})
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') app.quit()
 })
